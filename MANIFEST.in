@@ -1,0 +1,7 @@
+include AUTHORS
+include LICENSE
+include CHANGES
+include README.rst
+recursive-include cked/static *
+recursive-include cked/static *.asp *.php
+recursive-include cked/templates *

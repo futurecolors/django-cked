@@ -1,0 +1,24 @@
+===================
+django-cked changes
+===================
+
+
+0.0.4
+-----
+
+- Add the MANIFEST file.
+
+
+0.0.3
+
+- Fix CKED_UPLOAD_PATH setting.
+
+0.0.2
+-----
+
+- Fix README file for pypi.python.org
+
+0.0.1
+-----
+
+- Initial version
