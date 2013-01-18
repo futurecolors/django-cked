@@ -5,3 +5,4 @@ include README.rst
 recursive-include cked/static *
 recursive-include cked/static *.asp *.php
 recursive-include cked/templates *
+recursive-exclude img/
