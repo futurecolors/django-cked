@@ -10,6 +10,7 @@ Installation
 ------------
 
 1. Install or add django-cked to your PYTHONPATH.
+   `pip install django-cked` or `-e hg+https://bitbucket.org/ssbb/django-cked`
 2. Add ``cked`` to your ``INSTALLED_APPS`` setting.
 3. Add a ``CKED_UPLOAD_PATH`` to your proejct ``settings.py`` file.
    Default: ``os.path.join(MEDIA_ROOT, 'uploads')``.
