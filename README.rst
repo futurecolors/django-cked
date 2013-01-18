@@ -28,7 +28,10 @@ Installation
           'URL': '/media/uploads/',
       }
 4. Add CKEd URL include to your project ``urls.py`` file:
-   ``url(r'^cked/', include('cked.urls')),``
+
+:: 
+
+   url(r'^cked/', include('cked.urls')),
 
 Settings
 --------
@@ -65,7 +68,11 @@ Widget
         text = forms.CharField(widget=CKEditorWidget)
 
 **NOTE**: If you are using custom forms, dont’r forget to include form
-media to your template: ``{{ form.media }}``.
+media to your template:
+
+::
+
+    {{ form.media }}
 
 .. _`http://docs.ckeditor.com/#!/guide/dev\_configuration`: http://docs.ckeditor.com/#!/guide/dev_configuration
 .. _`https://github.com/Studio-42/elFinder/wiki/Client-configuration-options`: https://github.com/Studio-42/elFinder/wiki/Client-configuration-options
