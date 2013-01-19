@@ -20,19 +20,21 @@ or
 
 ## Configuration
 
-1. Add `cked` to your `INSTALLED_APPS` setting.
+Add `cked` to your `INSTALLED_APPS` setting.
 
-2. Set `ELFINDER_OPTIONS` in your settings:
-        :::python
-        ELFINDER_OPTIONS = {
-            ## required options
-            'root': os.path.join(PROJECT_ROOT, 'media', 'uploads'),
-            'URL': '/media/uploads/',
-        }
+Then set `ELFINDER_OPTIONS` in your settings:
 
-4. Add CKEd URL include to your project `urls.py` file:
-        :::python
-        url(r'^cked/', include('cked.urls')),
+    :::python
+    ELFINDER_OPTIONS = {
+        ## required options
+        'root': os.path.join(PROJECT_ROOT, 'media', 'uploads'),
+        'URL': '/media/uploads/',
+    }
+
+And add CKEd URL include to your project `urls.py` file:
+
+    :::python
+    url(r'^cked/', include('cked.urls')),
 
 ## Settings
 
