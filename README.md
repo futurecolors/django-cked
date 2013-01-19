@@ -11,29 +11,28 @@ browse support.
 
 ## Installation
 
-1. Install or add django-cked to your PYTHONPATH.
-
    pip install django-cked
 
 or
 
    pip install -e hg+https://bitbucket.org/ssbb/django-cked#egg=django-cked
 
-2. Add `cked` to your `INSTALLED_APPS` setting.
 
-3. Set `ELFINDER_OPTIONS` in your settings:
+## Configuration
 
-    :::python
-    ELFINDER_OPTIONS = {
-    ## required options
-        'root': os.path.join(PROJECT_ROOT, 'media', 'uploads'),
-        'URL': '/media/uploads/',
-    }
+1. Add `cked` to your `INSTALLED_APPS` setting.
+
+2. Set `ELFINDER_OPTIONS` in your settings:
+   :::python
+   ELFINDER_OPTIONS = {
+   ## required options
+       'root': os.path.join(PROJECT_ROOT, 'media', 'uploads'),
+       'URL': '/media/uploads/',
+   }
 
 4. Add CKEd URL include to your project `urls.py` file:
-
-    :::python
-    url(r'^cked/', include('cked.urls')),
+   :::python
+   url(r'^cked/', include('cked.urls')),
 
 ## Settings
 
