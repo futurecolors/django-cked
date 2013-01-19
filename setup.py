@@ -17,5 +17,5 @@ setup(
     keywords='django, ckeditor, elfinder, wysiwyg, upload',
     url='https://bitbucket.org/ssbb/django-cked',
     packages=find_packages(),
-    long_description=read('README.rst')
+    long_description=read('README.md')
 )
