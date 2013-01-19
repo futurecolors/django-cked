@@ -11,11 +11,11 @@ browse support.
 
 ## Installation
 
-   pip install django-cked
+    pip install django-cked
 
 or
 
-   pip install -e hg+https://bitbucket.org/ssbb/django-cked#egg=django-cked
+    pip install -e hg+https://bitbucket.org/ssbb/django-cked#egg=django-cked
 
 
 ## Configuration
@@ -23,16 +23,18 @@ or
 1. Add `cked` to your `INSTALLED_APPS` setting.
 
 2. Set `ELFINDER_OPTIONS` in your settings:
-   :::python
-   ELFINDER_OPTIONS = {
-   ## required options
-       'root': os.path.join(PROJECT_ROOT, 'media', 'uploads'),
-       'URL': '/media/uploads/',
-   }
+
+    :::python
+    ELFINDER_OPTIONS = {
+        ## required options
+        'root': os.path.join(PROJECT_ROOT, 'media', 'uploads'),
+        'URL': '/media/uploads/',
+    }
 
 4. Add CKEd URL include to your project `urls.py` file:
-   :::python
-   url(r'^cked/', include('cked.urls')),
+
+    :::python
+    url(r'^cked/', include('cked.urls')),
 
 ## Settings
 
@@ -48,7 +50,7 @@ or
 
 ### Model field
 
-:::python
+    :::python
     from django.db import models
     from cked.fields import RichTextField
 
@@ -65,5 +67,8 @@ or
     class MyForm(forms.Form):
         text = forms.CharField(widget=CKEditorWidget)
 
+
 **NOTE**: If you are using custom forms, dont’r forget to include form
-media to your template: `{{ form.media }}`
+media to your template:
+
+    {{ form.media }}
