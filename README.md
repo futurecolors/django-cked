@@ -39,11 +39,9 @@ or
 ## Settings
 
 - **CKEDITOR_OPTIONS**: CKEditor config.
-
   See [http://docs.ckeditor.com/#!/guide/dev_configuration](http://docs.ckeditor.com/#!/guide/dev_configuration)
--  **ELFINDER_OPTIONS**: elFinder config. See
-
-   [https://github.com/Studio-42/elFinder/wiki/Client-configuration-options](https://github.com/Studio-42/elFinder/wiki/Client-configuration-options)
+-  **ELFINDER_OPTIONS**: elFinder config.
+  See [https://github.com/Studio-42/elFinder/wiki/Client-configuration-options](https://github.com/Studio-42/elFinder/wiki/Client-configuration-options)
 
 
 ## Usage
