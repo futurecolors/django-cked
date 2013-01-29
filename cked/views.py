@@ -33,7 +33,7 @@ def elfinder(request):
                                        'dictionary type.')
 
     return render(request, 'cked/elfinder.html', {
-        'options': json_encode(options),
+        'options': json_encode(user_options),
     })
 
 
