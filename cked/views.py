@@ -24,16 +24,16 @@ def elfinder(request):
     
     user_options = getattr(settings, 'ELFINDER_OPTIONS', None)
     
-    if options != None:
-        if isinstance(options, dict):
+    if user_options != None:
+        if isinstance(user_options, dict):
             # Override defaults with CKEDITOR_OPTIONS.
-            user_options.update(options)
+            options.update(user_options)
         else:
             raise ImproperlyConfigured('CKEDITOR_OPTIONS setting must be a '
                                        'dictionary type.')
 
     return render(request, 'cked/elfinder.html', {
-        'options': json_encode(user_options),
+        'options': json_encode(options),
     })
 
 
