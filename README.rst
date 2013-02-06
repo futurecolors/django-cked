@@ -30,7 +30,6 @@ Then set ``ELFINDER_OPTIONS`` in your settings:
 
 ::
 
-    :::python
     ELFINDER_OPTIONS = {
         ## required options
         'root': os.path.join(PROJECT_ROOT, 'media', 'uploads'),
@@ -41,7 +40,6 @@ And add CKEd URL include to your project ``urls.py`` file:
 
 ::
 
-    :::python
     url(r'^cked/', include('cked.urls')),
 
 Settings
@@ -60,7 +58,6 @@ Model field
 
 ::
 
-    :::python
     from django.db import models
     from cked.fields import RichTextField
 
@@ -73,7 +70,6 @@ Widget
 
 ::
 
-    :::python
     from django import forms
     from cked.widgets import CKEditorWidget
 
