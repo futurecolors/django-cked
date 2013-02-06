@@ -446,7 +446,7 @@ class connector():
 							upSize += os.lstat(name).st_size
 							if self.__isUploadAllow(name):
 								os.chmod(name, self._options['fileMode'])
-								self._response['select'].append(self.__hash(name))
+								self._response['select'].append(self.__hash(name, True))
 							else:
 								self.__errorData(name, 'Not allowed file type')
 								try:
@@ -1309,9 +1309,11 @@ class connector():
 		return self._options['defaults'][access]
 
 
-	def __hash(self, path):
+	def __hash(self, path, u=False):
 		"""Hash of the path"""
 		m = hashlib.md5()
+        if u:
+            path = path.encode('utf-8')
 		m.update(path)
 		return str(m.hexdigest())
 
