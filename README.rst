@@ -1,28 +1,34 @@
-# Django CKEd
+Django CKEd
+===========
 
 **CKEditor and elFinder integration for Django Framework.**
 
-Provides a `RichTextField` and `CKEditorWidget` with upload and
+Provides a ``RichTextField`` and ``CKEditorWidget`` with upload and
 browse support.
 
+|CKEditor| |elFinder|
 
-![CKEditor](https://bitbucket.org/ssbb/django-cked/raw/default/img/ckeditor.jpg)
-![elFinder](https://bitbucket.org/ssbb/django-cked/raw/default/img/elfinder.jpg)
+Installation
+------------
 
-## Installation
+::
 
     pip install django-cked
 
 or
 
+::
+
     pip install -e hg+https://bitbucket.org/ssbb/django-cked#egg=django-cked
 
+Configuration
+-------------
 
-## Configuration
+Add ``cked`` to your ``INSTALLED_APPS`` setting.
 
-Add `cked` to your `INSTALLED_APPS` setting.
+Then set ``ELFINDER_OPTIONS`` in your settings:
 
-Then set `ELFINDER_OPTIONS` in your settings:
+::
 
     :::python
     ELFINDER_OPTIONS = {
@@ -31,22 +37,28 @@ Then set `ELFINDER_OPTIONS` in your settings:
         'URL': '/media/uploads/',
     }
 
-And add CKEd URL include to your project `urls.py` file:
+And add CKEd URL include to your project ``urls.py`` file:
+
+::
 
     :::python
     url(r'^cked/', include('cked.urls')),
 
-## Settings
+Settings
+--------
 
-- **CKEDITOR_OPTIONS**: CKEditor config.
-    See [http://docs.ckeditor.com/#!/guide/dev_configuration](http://docs.ckeditor.com/#!/guide/dev_configuration)
--  **ELFINDER_OPTIONS**: elFinder config.
-    See [https://github.com/Studio-42/elFinder/wiki/Client-configuration-options](https://github.com/Studio-42/elFinder/wiki/Client-configuration-options)
+-  **CKEDITOR\_OPTIONS**: CKEditor config. See
+   http://docs.ckeditor.com/#!/guide/dev_configuration
+-  **ELFINDER\_OPTIONS**: elFinder config. See
+   https://github.com/Studio-42/elFinder/wiki/Client-configuration-options
 
+Usage
+-----
 
-## Usage
+Model field
+~~~~~~~~~~~
 
-### Model field
+::
 
     :::python
     from django.db import models
@@ -56,7 +68,10 @@ And add CKEd URL include to your project `urls.py` file:
     class Entry(models.Model):
         text = RichTextField()
 
-### Widget
+Widget
+~~~~~~
+
+::
 
     :::python
     from django import forms
@@ -65,8 +80,12 @@ And add CKEd URL include to your project `urls.py` file:
     class MyForm(forms.Form):
         text = forms.CharField(widget=CKEditorWidget)
 
-
 **NOTE**: If you are using custom forms, dont’r forget to include form
 media to your template:
 
+::
+
     {{ form.media }}
+
+.. |CKEditor| image:: https://bitbucket.org/ssbb/django-cked/raw/default/img/ckeditor.jpg
+.. |elFinder| image:: https://bitbucket.org/ssbb/django-cked/raw/default/img/elfinder.jpg
