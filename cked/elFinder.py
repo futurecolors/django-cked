@@ -1312,8 +1312,8 @@ class connector():
 	def __hash(self, path, u=False):
 		"""Hash of the path"""
 		m = hashlib.md5()
-        if u:
-            path = path.encode('utf-8')
+		if u:
+			path = path.encode('utf-8')
 		m.update(path)
 		return str(m.hexdigest())
 
