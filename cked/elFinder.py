@@ -12,6 +12,10 @@ import shutil
 import time
 from datetime import datetime
 
+import threading
+threading._DummyThread._Thread__stop = lambda x: 42
+
+
 class connector():
 	"""Connector for elFinder"""
 
