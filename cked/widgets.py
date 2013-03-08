@@ -36,13 +36,13 @@ Widget providing CKEditor for Rich Text Editing.
         # If CKEDITOR_OPTIONS presented in settings, use it!
         options = getattr(settings, 'CKEDITOR_OPTIONS', None)
 
-        if options != None:
+        if options is not None:
             if isinstance(options, dict):
                 # Override defaults with CKEDITOR_OPTIONS.
                 self.options.update(options)
             else:
-                raise ImproperlyConfigured('CKEDITOR_OPTIONS setting must be a '
-                                           'dictionary type.')
+                raise ImproperlyConfigured('CKEDITOR_OPTIONS setting must be'
+                                           ' a dictionary type.')
 
     def render(self, name, value, attrs={}):
         if value is None:
@@ -56,6 +56,5 @@ Widget providing CKEditor for Rich Text Editing.
             'final_attrs': flatatt(final_attrs),
             'value': conditional_escape(force_unicode(value)),
             'id': final_attrs['id'],
-            'options': json_encode(self.options)
-            })
+            'options': json_encode(self.options)})
         )

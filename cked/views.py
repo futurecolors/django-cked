@@ -21,10 +21,10 @@ json_encode = json.JSONEncoder().encode
 def elfinder(request):
     options = default_settings.ELFINDER_DEFAULT_OPTIONS.copy()
     options['url'] = reverse('cked_elfinder_connector')
-    
+
     user_options = getattr(settings, 'ELFINDER_OPTIONS', None)
-    
-    if user_options != None:
+
+    if user_options is not None:
         if isinstance(user_options, dict):
             # Override defaults with CKEDITOR_OPTIONS.
             options.update(user_options)
