@@ -29,12 +29,16 @@ Widget providing CKEditor for Rich Text Editing.
         js = (settings.STATIC_URL + 'cked/ckeditor/ckeditor.js',)
 
     def __init__(self, *args, **kwargs):
+        config_name = kwargs.pop('config_name', 'default')
         super(CKEditorWidget, self).__init__(*args, **kwargs)
         # Use default config
         self.options = default_settings.CKEDITOR_DEFAULT_OPTIONS.copy()
 
         # If CKEDITOR_OPTIONS presented in settings, use it!
-        options = getattr(settings, 'CKEDITOR_OPTIONS', None)
+        general_options = getattr(settings, 'CKEDITOR_OPTIONS', None)
+
+        if config_name in general_options:
+            options = general_options[config_name]
 
         if options is not None:
             if isinstance(options, dict):
@@ -58,3 +62,5 @@ Widget providing CKEditor for Rich Text Editing.
             'id': final_attrs['id'],
             'options': json_encode(self.options)})
         )
+
+
