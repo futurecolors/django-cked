@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ImproperlyConfigured
 from django.core.urlresolvers import reverse
+from django.template.defaultfilters import slugify
+from pytils.translit import translify
 
 from cked import elFinder
 from cked.widgets import json_encode
@@ -59,7 +61,8 @@ def elfinder_connector(request):
         up_files = {}
         for up in request.FILES.getlist('upload[]'):
             if up.name:
-                up_files[up.name] = up.file
+                file_name = slugify(translify(up.name.decode('utf8')))
+                up_files[file_name] = up.file
 
         req[field] = up_files
 
