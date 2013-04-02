@@ -61,7 +61,7 @@ def elfinder_connector(request):
         up_files = {}
         for up in request.FILES.getlist('upload[]'):
             if up.name:
-                file_name = slugify(translify(up.name.decode('utf8')))
+                file_name = slugify(translify(up.name))
                 up_files[file_name] = up.file
 
         req[field] = up_files
