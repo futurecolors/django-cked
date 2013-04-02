@@ -39,6 +39,8 @@ Widget providing CKEditor for Rich Text Editing.
 
         if config_name in general_options:
             options = general_options[config_name]
+        else:
+            options = None
 
         if options is not None:
             if isinstance(options, dict):
