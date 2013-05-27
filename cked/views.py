@@ -11,6 +11,9 @@ from cked import elFinder
 from cked.widgets import json_encode
 from cked import default_settings
 
+from django.contrib.admin.views.decorators import staff_member_required
+
+
 try:
     import json
 except ImportError:
@@ -20,6 +23,7 @@ except ImportError:
 json_encode = json.JSONEncoder().encode
 
 
+@staff_member_required
 def elfinder(request):
     options = default_settings.ELFINDER_DEFAULT_OPTIONS.copy()
     options['url'] = reverse('cked_elfinder_connector')
