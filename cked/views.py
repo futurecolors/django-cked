@@ -44,6 +44,7 @@ def elfinder(request):
 
 
 @csrf_exempt
+@staff_member_required
 def elfinder_connector(request):
     elf = elFinder.connector(settings.ELFINDER_OPTIONS)
     req = {}
